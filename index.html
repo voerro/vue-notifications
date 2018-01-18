@@ -67,10 +67,25 @@
     <script src="/dist/build.js"></script>
     
     <script>
+        let themes = [
+            'blue-grey',
+            'amber',
+            'light-green',
+            'light-blue',
+            'purple',
+            'pink',
+            'red'
+        ];
+
         let btn = document.querySelector('#btn');
         
         btn.addEventListener('click', function () {
-            notify('a notification');
+            let theme = themes[Math.floor(Math.random() * themes.length)];
+            
+            notify({
+                text: 'Data has been successfully saved!',
+                theme: theme
+            });
         });
     </script>
 </body>

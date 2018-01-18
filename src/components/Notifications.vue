@@ -2,8 +2,8 @@
     <div class="notifications-container" :class="this.position">
         <notification v-for="item in items"
             :key="item.id"
-            :notification="item"
-            :theme="theme"
+            :data-notification="item"
+            :data-theme="theme"
             @destroy="pull(item.id)"></notification>
     </div>
 </template>
@@ -36,7 +36,7 @@
             push(notification) {
                 this.items.push({ 
                     id: this.count++,
-                    text: notification 
+                    notification: notification 
                 });
             },
 

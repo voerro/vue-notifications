@@ -1,18 +1,42 @@
 <template>
-    <div v-text="`${notification.id} - ${notification.text}`"
+    <div v-text="text"
         @click="hide($event.target)"
         class="notification"
-        :class="this.theme ? this.theme : 'light-blue'"></div>
+        :class="theme"></div>
 </template>
 
 <script>
 export default {
     props: [
-        'notification',
-        'theme'
+        'dataNotification',
+        'dataTheme'
     ],
 
+    data() {
+        return {
+            notification: this.dataNotification.notification,
+            text: '',
+            theme: this.dataTheme ? this.dataTheme : 'light-blue'
+        };
+    },
+
     mounted() {
+        // An object with options
+        if (typeof this.notification === 'object') {
+            if (this.notification.text === undefined) {
+                console.error('A notification must have a "text" property.');
+
+                this.destroy();
+
+                return;
+            }
+
+            this.text = this.notification.text;
+            this.theme = this.notification.theme ? this.notification.theme : this.theme;
+        } else {    // A string
+            this.text = this.notification;
+        }
+
         setTimeout(() => {
             this.hide(this.$el);
         }, 5000);
