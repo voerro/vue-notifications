@@ -6,6 +6,8 @@
             :data-theme="theme"
             :hide-after="delay"
             @destroy="pull(item.id)"></notification>
+
+        <audio id="voerro-notifications-player" :src="sound" v-if="sound"></audio>
     </div>
 </template>
 
@@ -17,7 +19,8 @@
             'position',
             'theme',
             'hideAfter',
-            'single'
+            'single',
+            'sound'
         ],
 
         components: { Notification },
@@ -47,6 +50,8 @@
                     id: this.count++,
                     notification: notification 
                 });
+
+                this.playSound();
             },
 
             pull(id) {
@@ -56,6 +61,15 @@
                         return;
                     }
                 });
+            },
+
+            playSound() {
+                if (this.sound) {
+                    let player = document.getElementById('voerro-notifications-player')
+                    
+                    player.currentTime = 0;
+                    player.play();
+                }
             },
         }
     }
