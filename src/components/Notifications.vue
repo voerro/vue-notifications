@@ -3,6 +3,7 @@
         <notification v-for="item in items"
             :key="item.id"
             :notification="item"
+            :theme="theme"
             @destroy="pull(item.id)"></notification>
     </div>
 </template>
@@ -12,7 +13,8 @@
 
     export default {
         props: [
-            'position'
+            'position',
+            'theme'
         ],
 
         components: { Notification },
@@ -58,7 +60,7 @@
 
 /* Possible notification container positions */
 .top-left {
-    top: 0.9rem;
+    top: .5rem;
     left: 1rem;
 }
 .bottom-left {
@@ -67,24 +69,24 @@
 }
 
 .top-right {
-    top: 0.9rem;
+    top: .5rem;
     right: 1rem;
 }
 .bottom-right {
-    bottom: 0.9rem;
+    bottom: .5rem;
     right: 1rem;
 }
 
 .top-center {
     width: 50%;
 
-    top: 0.9rem;
+    top: .5rem;
     left: 25%;
 }
 .bottom-center {
     width: 50%;
 
-    bottom: 0.9rem;
+    bottom: .5rem;
     left: 25%;
 }
 </style>
