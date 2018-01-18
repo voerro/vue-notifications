@@ -1,7 +1,13 @@
 import Vue from 'vue'
-import App from './App.vue'
+import Notifications from './components/Notifications.vue'
+import Notification from './Notification'
+
+window.Notification = new Notification;
+
+Vue.component('notifications', Notifications);
 
 new Vue({
-  el: '#app',
-  render: h => h(App)
+  el: '#app'
 })
+
+export { Notifications, Notification };

@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>@voerro/vue-notifications</title>
-  </head>
-  <body>
-    <div id="app"></div>
+</head>
+<body>
+    <div id="app">
+        <notifications></notifications>
+        <button id="btn">Push Notification</button>
+    </div>
     <script src="/dist/build.js"></script>
-  </body>
+    
+    <script>
+        let btn = document.querySelector('#btn');
+        
+        btn.addEventListener('click', function () {
+            Notification.push('a notification');
+        });
+    </script>
+</body>
 </html>
