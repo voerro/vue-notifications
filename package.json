@@ -1,10 +1,16 @@
 {
   "name": "@voerro/vue-notifications",
   "description": "Easily display notifications to your users",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "author": "Alexander Zavyalov <alex@voerro.com>",
   "license": "MIT",
-  "private": true,
+  "main": "src/main.js",
+  "keywords": [
+    "vue",
+    "vuejs",
+    "notification",
+    "notifications"
+  ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
