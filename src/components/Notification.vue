@@ -1,8 +1,8 @@
 <template>
     <div v-html="text"
         @click="hide($event.target)"
-        class="notification"
-        :class="theme"></div>
+        class="voerro-notification"
+        :class="`voerro-notification-theme-${theme}`"></div>
 </template>
 
 <script>
@@ -53,7 +53,7 @@ export default {
 
     methods: {
         getRootElement(element) {
-            if (! element.classList.contains('notification')) {
+            if (! element.classList.contains('voerro-notification')) {
                 return this.getRootElement(element.parentNode);
             }
 
@@ -92,7 +92,7 @@ export default {
 </script>
 
 <style scoped>
-.notification {
+.voerro-notification {
     margin: .5rem 0;
     padding: 1rem;
 
@@ -102,87 +102,87 @@ export default {
 }
 
 /* Themes */
-.black {
+.voerro-notification-theme-black {
     background: #000000;
     color: #fff;
 }
-.white {
+.voerro-notification-theme-white {
     background: #fff;
     color: #000000;
 }
-.blue-grey {
+.voerro-notification-theme-blue-grey {
     background: #455A64;
     color: #fff;
 }
-.grey {
+.voerro-notification-theme-grey {
     background: #616161;
     color: #fff;
 }
-.brown {
+.voerro-notification-theme-brown {
     background: #5D4037;
     color: #fff;
 }
-.deep-orange {
+.voerro-notification-theme-deep-orange {
     background: #DD2C00;
     color: #fff;
 }
-.orange {
+.voerro-notification-theme-orange {
     background: #FF6D00;
     color: #000;
 }
-.amber {
+.voerro-notification-theme-amber {
     background: #FFAB00;
     color: #000;
 }
-.yellow {
+.voerro-notification-theme-yellow {
     background: #FFD600;
     color: #000;
 }
-.lime {
+.voerro-notification-theme-lime {
     background: #AEEA00;
     color: #000;
 }
-.light-green {
+.voerro-notification-theme-light-green {
     background: #64DD17;
     color: #000;
 }
-.green {
+.voerro-notification-theme-green {
     background: #00C853;
     color: #000;
 }
-.teal {
+.voerro-notification-theme-teal {
     background: #00BFA5;
     color: #000;
 }
-.cyan {
+.voerro-notification-theme-cyan {
     background: #00B8D4;
     color: #000;
 }
-.light-blue {
+.voerro-notification-theme-light-blue {
     background: #0091EA;
     color: #fff;
 }
-.blue {
+.voerro-notification-theme-blue {
     background: #2962FF;
     color: #fff;
 }
-.indigo {
+.voerro-notification-theme-indigo {
     background: #304FFE;
     color: #fff;
 }
-.deep-purple {
+.voerro-notification-theme-deep-purple {
     background: #6200EA;
     color: #fff;
 }
-.purple {
+.voerro-notification-theme-purple {
     background: #AA00FF;
     color: #fff;
 }
-.pink {
+.voerro-notification-theme-pink {
     background: #C51162;
     color: #fff;
 }
-.red {
+.voerro-notification-theme-red {
     background: #D50000;
     color: #fff;
 }

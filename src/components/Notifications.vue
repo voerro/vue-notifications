@@ -1,5 +1,5 @@
 <template>
-    <div class="notifications-container" :class="this.position">
+    <div class="voerro-notifications-container" :class="this.position">
         <notification v-for="item in items"
             :key="item.id"
             :data-notification="item"
@@ -16,7 +16,8 @@
         props: [
             'position',
             'theme',
-            'hideAfter'
+            'hideAfter',
+            'single'
         ],
 
         components: { Notification },
@@ -37,6 +38,11 @@
 
         methods: {
             push(notification) {
+                if (this.single === 'true') {
+                    // Only show the last notification
+                    this.items.splice(0, this.items.length);
+                }
+
                 this.items.push({ 
                     id: this.count++,
                     notification: notification 
@@ -56,7 +62,7 @@
 </script>
 
 <style scoped>
-.notifications-container {
+.voerro-notifications-container {
     position: fixed;
     width: 25%;
 }
