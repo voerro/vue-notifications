@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="notifications-container" :class="this.position">
         <notification v-for="item in items"
             :key="item.id"
             :notification="item"
@@ -11,6 +11,10 @@
     import Notification from './Notification.vue';
 
     export default {
+        props: [
+            'position'
+        ],
+
         components: { Notification },
 
         data() {
@@ -45,3 +49,42 @@
         }
     }
 </script>
+
+<style scoped>
+.notifications-container {
+    position: fixed;
+    width: 25%;
+}
+
+/* Possible notification container positions */
+.top-left {
+    top: 0.9rem;
+    left: 1rem;
+}
+.bottom-left {
+    bottom: 0.91rem;
+    left: 1rem;
+}
+
+.top-right {
+    top: 0.9rem;
+    right: 1rem;
+}
+.bottom-right {
+    bottom: 0.9rem;
+    right: 1rem;
+}
+
+.top-center {
+    width: 50%;
+
+    top: 0.9rem;
+    left: 25%;
+}
+.bottom-center {
+    width: 50%;
+
+    bottom: 0.9rem;
+    left: 25%;
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
     <div v-text="`${notification.id} - ${notification.text}`"
         @click="hide($event.target)"
-        class="voerro-notification"></div>
+        class="notification"></div>
 </template>
 
 <script>
@@ -42,8 +42,10 @@ export default {
 }
 </script>
 
-<style>
-.voerro-notification {
+<style scoped>
+.notification {
+    margin: 0.1rem 0;
+    
     /* TEMPORRAY */
     border: 1px solid #ff0000;
     padding: 1rem;
