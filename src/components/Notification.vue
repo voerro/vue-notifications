@@ -1,5 +1,5 @@
 <template>
-    <div v-text="text"
+    <div v-html="text"
         @click="hide($event.target)"
         class="notification"
         :class="theme"></div>
