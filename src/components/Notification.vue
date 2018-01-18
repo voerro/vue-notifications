@@ -52,7 +52,19 @@ export default {
     },
 
     methods: {
+        getRootElement(element) {
+            if (! element.classList.contains('notification')) {
+                return this.getRootElement(element.parentNode);
+            }
+
+            return element;
+        },
+
         hide(target) {
+            // Get the root element of the notification in case the user clicked
+            // on another DOM element (since notifications can contain HTML)
+            target = this.getRootElement(target);
+
             // Maybe I'll add more styles/effects for hiding notifications someday
             // That's why I'm not calling fadeOut() directly
             target.style.opacity = 1;
