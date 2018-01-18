@@ -4,6 +4,7 @@
             :key="item.id"
             :data-notification="item"
             :data-theme="theme"
+            :hide-after="delay"
             @destroy="pull(item.id)"></notification>
     </div>
 </template>
@@ -14,7 +15,8 @@
     export default {
         props: [
             'position',
-            'theme'
+            'theme',
+            'hideAfter'
         ],
 
         components: { Notification },
@@ -22,7 +24,8 @@
         data() {
             return {
                 items: [],
-                count: 0
+                count: 0,
+                delay: this.hideAfter ? this.hideAfter : 5000,
             };
         },
 

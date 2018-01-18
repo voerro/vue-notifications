@@ -7,7 +7,8 @@
 <body>
     <div id="app">
         <notifications position="bottom-right"
-            theme="green"></notifications>
+            theme="green"
+            hide-after="never"></notifications>
         <button id="btn">Push Notification</button>
 
         <div>
@@ -86,7 +87,9 @@
                 text: `<b>Success!</b>
                     <br><br>
                     Data has been saved!`,
-                theme: theme
+                theme: theme,
+                // hideAfter: 'never',
+                // hideAfter: 3000,
             });
         });
     </script>

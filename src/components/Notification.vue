@@ -9,14 +9,16 @@
 export default {
     props: [
         'dataNotification',
-        'dataTheme'
+        'dataTheme',
+        'hideAfter'
     ],
 
     data() {
         return {
             notification: this.dataNotification.notification,
             text: '',
-            theme: this.dataTheme ? this.dataTheme : 'light-blue'
+            theme: this.dataTheme ? this.dataTheme : 'light-blue',
+            delay: this.hideAfter
         };
     },
 
@@ -32,14 +34,21 @@ export default {
             }
 
             this.text = this.notification.text;
+            
             this.theme = this.notification.theme ? this.notification.theme : this.theme;
+
+            this.delay = this.notification.hideAfter
+                ? this.notification.hideAfter
+                : this.delay;
         } else {    // A string
             this.text = this.notification;
         }
 
-        setTimeout(() => {
-            this.hide(this.$el);
-        }, 5000);
+        if (this.delay !== 'never') {
+            setTimeout(() => {
+                this.hide(this.$el);
+            }, this.delay);
+        }
     },
 
     methods: {
