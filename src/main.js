@@ -5,11 +5,7 @@ import notify from './interface'
 window.notify = notify;
 
 if (document.querySelector('#voerro-notifications-demo-app-nnpqbywihspyskxjjiky')) {
-    Vue.component('notifications', Notifications);
-    
-    new Vue({
-        el: '#voerro-notifications-demo-app-nnpqbywihspyskxjjiky'
-    });
+    window.Notifications = Notifications;
 }
 
 export default Notifications;
