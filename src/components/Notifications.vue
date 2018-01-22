@@ -20,7 +20,10 @@
             'theme',
             'hideAfter',
             'single',
-            'sound'
+            'sound',
+
+            'firstNotification',
+            'firstTheme',
         ],
 
         components: { Notification },
@@ -37,6 +40,13 @@
             window.NotificationEvent.$on('push', (notification) => {
                 this.push(notification);
             });
+
+            if (this.firstNotification) {
+                this.push({
+                    text: this.firstNotification,
+                    theme: this.firstTheme ? this.firstTheme : ''
+                });
+            }
         },
 
         methods: {
@@ -79,6 +89,7 @@
 .voerro-notifications-container {
     position: fixed;
     width: 25%;
+    z-index: 100;
 }
 
 /* Possible notification container positions */
