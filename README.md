@@ -6,6 +6,8 @@
 
 Easily display notifications to your users.
 
+[Live Demo](https://alexmordred.github.io/vue-notifications/)
+
 ## Installation
 
 Install via npm:
