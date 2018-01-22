@@ -2,7 +2,7 @@
 
 [![npm (scoped)](https://img.shields.io/npm/v/@voerro/vue-notifications.svg?style=flat-square)](https://www.npmjs.com/package/@voerro/vue-notifications)
 [![npm](https://img.shields.io/npm/dm/@voerro/vue-notifications.svg?style=flat-square)](https://www.npmjs.com/package/@voerro/vue-notifications)
-[![Packagist](https://img.shields.io/packagist/l/voerro/laravel-file-uploader.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![MIT](https://img.shields.io/github/license/AlexMordred/vue-notifications.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 Easily display notifications to your users.
 
