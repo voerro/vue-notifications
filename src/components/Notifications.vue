@@ -1,5 +1,5 @@
 <template>
-    <div class="voerro-notifications-container" :class="this.position">
+    <div class="voerro-notifications-container" :class="this.class">
         <notification v-for="item in items"
             :key="item.id"
             :data-notification="item"
@@ -30,6 +30,7 @@
 
         data() {
             return {
+                class: this.position ? this.position : 'bottom-right',
                 items: [],
                 count: 0,
                 delay: this.hideAfter ? this.hideAfter : 5000,
@@ -58,7 +59,7 @@
 
                 let method = 'push';
 
-                if (this.position.substring(0, 6) === 'bottom') {
+                if (this.class.substring(0, 6) === 'bottom') {
                     method = 'unshift';
                 }
 
