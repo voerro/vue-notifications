@@ -45,11 +45,11 @@ To show a notification from JavaScript:
 notify('Data has been successfully saved!');
 ```
 
-You're not limited with plain text - HTML is supported.
+You're not limited to plain text - HTML is supported.
 
 ## Component Properties
 
-There is a number of properties you can pass to the component in a similar manner you can pass the "first-notification".
+There is a number of properties you can pass to the component in a similar manner we passed the "first-notification" in the example above.
 
 Property | Default Value | Possible Values | Description
 --- | --- | --- | --- |
@@ -63,7 +63,7 @@ first-theme | undefined | string | A theme of a notification which will be shown
 
 ## JavaScript Options
 
-Instead of just passing a string to the `notify()` method you can also pass an object with options. This way you can customize each individual notification. For, example:
+Instead of just passing a string to the `notify()` method you can also pass an object with options. This way you can customize each individual notification. For example:
 
 ```javascript
 notify({
