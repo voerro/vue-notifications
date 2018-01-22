@@ -37,6 +37,12 @@
             };
         },
 
+        watch: {
+            position() {
+                this.class = this.position ? this.position : 'bottom-right';
+            }
+        },
+
         created() {
             window.NotificationEvent.$on('push', (notification) => {
                 this.push(notification);
