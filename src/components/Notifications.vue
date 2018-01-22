@@ -56,7 +56,13 @@
                     this.items.splice(0, this.items.length);
                 }
 
-                this.items.push({ 
+                let method = 'push';
+
+                if (this.position.substring(0, 6) === 'bottom') {
+                    method = 'unshift';
+                }
+
+                this.items[method]({ 
                     id: this.count++,
                     notification: notification 
                 });
