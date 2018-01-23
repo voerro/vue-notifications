@@ -54,7 +54,7 @@ There is a number of properties you can pass to the component in a similar manne
 Property | Default Value | Possible Values | Description
 --- | --- | --- | --- |
 position | 'bottom-right' | 'top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right' | Position of the notifications on the page.
-hide-after | 5000 | 'never', integer number | Number of milliseconds before a notification disappears. 'never' - notifications won't disappear automatically, users will have to close it manually.
+hide-after | 5000 | 'never', integer number | Number of milliseconds before a notification disappears. 'never' - notifications won't disappear automatically, users will have to close them manually.
 theme | 'light-blue' | 'black', 'white', 'blue-grey', 'grey', 'brown', 'deep-orange', 'orange', 'amber', 'yellow', 'lime', 'light-green', 'green', 'teal', 'cyan', 'light-blue', 'blue', 'indigo', 'deep-purple', 'purple', 'pink', 'red' | Color theme for the notifications. Uses Material colors.
 single | undefined | 'true' | Set to 'true' to only show one notification at a time (the last one)
 sound | undefined | 'path-to-a-sound-file' | A path to a sound file which will be played every time a new notification is shown.
