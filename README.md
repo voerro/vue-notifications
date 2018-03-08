@@ -6,7 +6,7 @@
 
 Easily display notifications to your users.
 
-[Live Demo](https://alexmordred.github.io/vue-notifications/)
+[Live Demo](https://voerro.github.io/vue-notifications/)
 
 ## Installation
 

@@ -1,7 +1,7 @@
 {
   "name": "@voerro/vue-notifications",
   "description": "Easily display notifications to your users",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Alexander Zavyalov <alex@voerro.com>",
   "license": "MIT",
   "main": "src/main.js",
